@@ -116,6 +116,8 @@ app.use((req,res,next)=>{
 // res.send(newRegUser)
 // })
 
+// show the listings index when people hit the bare domain
+app.get("/", (req, res) => res.redirect("/listings"));
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewsRouter);
 app.use("/",userRouter);
@@ -136,4 +138,4 @@ app.use((err,req,res,next)=>{
 })
 
 
-// port
+
